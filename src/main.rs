@@ -41,8 +41,12 @@ fn handle_client(mut stream: TcpStream) {
         break;
       }
       // 2.2 将buff消息打印到控制台
-      if let Ok(msg) = std::str::from_utf8(&buff) {
-        println!("{}", msg)
+      if let Ok(msg) = std::str::from_utf8(&buff[0..read]) {
+        println!("{}", msg);
+        // 2.3 将buff消息回传给客户端
+        if let Err(_) = stream.write(&buff[0..read]) {
+          break;
+        }
       } else {
         break;
       }

@@ -1,7 +1,7 @@
 # demo-rust-server
 
 ## preview
-![](http://cdn.hackdapp.com/2021-03-18-140816.gif)
+![](http://cdn.hackdapp.com/2021-03-18-141704.gif)
 
 ## buid
 
