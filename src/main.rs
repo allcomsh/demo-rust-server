@@ -5,8 +5,8 @@ use std::thread;
 fn main() {
     println!("Starting TcpServer ...");
 
-    // 1. 绑定本地监听服务
-    let listener = TcpListener::bind("127.0.0.1:22").expect("Unable to bind to socket");
+    // 1. 绑定本地监听服务，在Mac上不能是22
+    let listener = TcpListener::bind("127.0.0.1:2222").expect("Unable to bind to socket 2222");
     // 2. 获取本地地址
     let addr = listener.local_addr().expect("Unable to get the local port");
     // 3. 控制台打印监听端口
